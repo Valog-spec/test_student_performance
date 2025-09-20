@@ -11,7 +11,7 @@ def test_with_valid_files(temp_csv_files, capsys):
     """Тест скрипта с валидными аргументами"""
     with patch(
         "sys.argv",
-        ["main.py", "--files"] + temp_csv_files + ["--report", "students-performance"],
+        ["main.py", "--test_files"] + temp_csv_files + ["--report", "students-performance"],
     ):
         main()
         captured = capsys.readouterr()
@@ -24,7 +24,7 @@ def test_with_invalid_files(temp_csv_files, capsys):
     """Тест скрипта с несуществующими файлами"""
     with patch(
         "sys.argv",
-        ["main.py", "--files test1.csv test2.csv --report", "students-performance"],
+        ["main.py", "--test_files test1.csv test2.csv --report", "students-performance"],
     ):
         with pytest.raises(SystemExit):
             main()
