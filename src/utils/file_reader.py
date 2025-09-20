@@ -1,7 +1,8 @@
 import csv
+from typing import List
 
 
-def read_csv_files(file_paths: str):
+def read_csv_files(file_paths: List):
     """Читает данные из нескольких CSV файлов"""
     all_data = []
 

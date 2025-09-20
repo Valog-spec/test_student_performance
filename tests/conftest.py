@@ -5,7 +5,7 @@ from typing import Any, Generator, List
 
 import pytest
 
-from reports.student_performance import StudentPerformanceReport
+from src.reports.student_performance import StudentPerformanceReport
 
 
 @pytest.fixture

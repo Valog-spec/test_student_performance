@@ -3,12 +3,13 @@ from typing import Any, List
 
 from tabulate import tabulate
 
+from src.reports.base_report import MyBaseReport
 
-class StudentPerformanceReport:
+
+class StudentPerformanceReport(MyBaseReport):
     """Отчет об успеваемости студентов"""
 
-    @staticmethod
-    def create(data: List[dict]) -> List[Any]:
+    def create(self, data: List[dict]) -> List[Any]:
         """Создает отсортированный по убыванию отчет со средними оценками студентов"""
 
         student_grades = defaultdict(list)
@@ -21,13 +22,12 @@ class StudentPerformanceReport:
         student_averages = []
         for student, grades in student_grades.items():
             average = sum(grades) / len(grades)
-            student_averages.append((student, round(average, 2)))
+            student_averages.append((student, round(average, 1)))
 
         student_averages.sort(key=lambda x: x[1], reverse=True)
         return student_averages
 
-    @staticmethod
-    def display(data: List) -> None:
+    def display(self, data: List) -> None:
         """Вывод отчета в виде таблицы"""
         if not data:
             print("Нет данных для отображения.")

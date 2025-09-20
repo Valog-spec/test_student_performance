@@ -2,3 +2,4 @@
 max-line-length = 88
 extend-ignore =
     PIE798
+    E402

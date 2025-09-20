@@ -2,9 +2,9 @@ from unittest.mock import patch
 
 import pytest
 
-from main import main
-from reports.student_performance import StudentPerformanceReport
-from utils.file_reader import read_csv_files
+from src.main import main
+from src.reports.student_performance import StudentPerformanceReport
+from src.utils.file_reader import read_csv_files
 
 
 def test_with_valid_files(temp_csv_files, capsys):
@@ -26,7 +26,7 @@ def test_with_invalid_files(temp_csv_files, capsys):
         "sys.argv",
         [
             "main.py",
-            "--test_files test1.csv test2.csv --report",
+            "--example_files test1.csv test2.csv --report",
             "students-performance",
         ],
     ):
