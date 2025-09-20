@@ -13,9 +13,7 @@ REPORTS = {
 def parse_arguments() -> Namespace:
     parser = argparse.ArgumentParser(description="Анализ успевемости студентов")
 
-    parser.add_argument(
-        "--test_files", nargs="+", required=True, help="Пути к CSV файлам"
-    )
+    parser.add_argument("--files", nargs="+", required=True, help="Пути к CSV файлам")
     parser.add_argument("--report", required=False, help="Название отчета")
 
     return parser.parse_args()

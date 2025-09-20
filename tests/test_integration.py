@@ -11,9 +11,7 @@ def test_with_valid_files(temp_csv_files, capsys):
     """Тест скрипта с валидными аргументами"""
     with patch(
         "sys.argv",
-        ["main.py", "--test_files"]
-        + temp_csv_files
-        + ["--report", "students-performance"],
+        ["main.py", "--files"] + temp_csv_files + ["--report", "students-performance"],
     ):
         main()
         captured = capsys.readouterr()
