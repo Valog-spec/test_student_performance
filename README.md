@@ -37,3 +37,19 @@
 ```bash
    pdm run pytest tests
 ```
+
+## Демонстрация работы скрипта
+Скрипт полностью рабочий
+
+![Рабочий](/images_example_work/ok.png)
+
+Работа скрипта с несуществующим отчетом
+
+![Не существующий отчет](/images_example_work/invalid_report.png)
+
+Работа с несуществующим файлом(и)
+
+![Не существующий файл](/images_example_work/not_existing_file.png)
+
+## Демонстрация запуска тестов с покрытием
+![Тесты с покрытием](/images_example_work/test.png)
